@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+/* General Styling */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/* Header: Logo & Menu Styling */
+.fa-cubes {
+  font-size: 2rem;
+  color: #f7931a;
+}
+
+.logo-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  text-transform: lowercase;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: stretch;
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+nav li a {
+  text-decoration: none;
+  margin-right: 2rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Spacer between Header & Splash Screen */
+.spacer {
+  margin-bottom: 10rem;
+}
+
+/* Splash Text & Call-to-Action Buttons Styling */
+.splash h1 {
+  font-size: 3rem;
+}
+
+.splash-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.splash span {
+  font-size: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash button {
+  background: transparent;
+  border: 2px solid #f7931a;
+  color: #f7931a;
+  font-size: 1.3em;
+  padding: 1.3rem 1.8rem;
+  border-radius: 2px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.splash button:hover {
+  background: #f7931a;
+  color: white;
+}
+
+/* Hero Pattern*/
+.pattern {
+  background-color: #f5f5f5;
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%238d8c8e' fill-opacity='0.47' fill-rule='evenodd'/%3E%3C/svg%3E");
+  width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+}
+
+/* General Section Styling */
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Specific Section Styling */
+.genesis {
+  background-color: #ffb963;
+}
+
+.mine {
+  background-color: #ff8c00;
+}
+
+.funds {
+  background-color: #ffd663;
+}
+
+.transaction {
+  background-color: #9b7200;
+}
+
+.confirmation {
+  background-color: #ff8963;
+}
+
+.block-explorer {
+  background-color: #ff3d00;
+}
+
+.backend {
+  background-color: #9b2500;
+}
+
+.genesis button,
+.mine button,
+.funds button,
+.confirmation button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1em;
+  padding: 0.7rem 1.2rem;
+  border-radius: 2px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.genesis button:hover,
+.mine button:hover,
+.funds button:hover,
+.confirmation button:hover {
+  background: #fff;
+  color: #f7931a;
+}
+
+.transaction form,
+.block-explorer form {
+  display: flex;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction input,
+.block-explorer input,
+.funds input {
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 0.5rem 1rem;
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.funds #heading {
+  margin-bottom: 2rem;
+}
+
+.funds #fundsBtn {
+  text-transform: uppercase;
+}
+
+.transaction #recipientsAddress,
+.block-explorer #searchBlockchain,
+.funds #userAddress {
+  width: 30rem;
+  margin-bottom: 1rem;
+}
+
+.transaction #transactionAmount {
+  width: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.transaction #transactionBtn,
+.block-explorer #searchBtn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.transaction #transactionBtn:hover,
+.block-explorer #searchBtn:hover,
+.funds #fundsBtn:hover {
+  background: #fff;
+  color: #f7931a;
+  transform: scale(1.1);
+}
+
+.transaction #errorMessage,
+.transaction #successMessageTx,
+.block-explorer #errorMessageBlockExplorer,
+.genesis #genesisTxErrorMessage,
+.funds #txErrorMessage,
+.funds #fundsMessage {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-transform: initial;
+}
+
+.mempool {
+  display: flex;
+  margin-top: 5rem;
+}
+
+#genesisTxErrorMessage,
+#txErrorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+#fundsMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.block-explorer #searchOptions {
+  appearance: none;
+  background: transparent;
+  border: 2px solid #fff;
+  width: 30rem;
+  height: 2.5rem;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+.backendTitle {
+  margin-bottom: 5rem;
+}
+
+.backend a {
+  text-decoration: none;
+}
+
+.github {
+  border: 2px solid #fff;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.github:hover {
+  background: #fff;
+  color: #f7931a;
+  transform: scale(1.1);
+}
+
+.fa-github {
+  margin-right: 0.4rem;
+}
+
+/* Table Styling */
+
+.genesisBlockTable,
+.searchBlockTable {
+  margin-top: 5rem;
+}
+
+.genesisBlockTable table,
+.searchBlockTable table {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 60rem;
+}
+
+.genesisBlockTable th,
+td,
+.searchBlockTable th,
+td,
+.transactionTable th,
+td,
+.pendingTransactionTable th,
+td,
+.searchTransactionTable th,
+td,
+.searchAddressTransaction th,
+td,
+.blockchain th,
+td {
+  color: white;
+  padding: 0.5rem;
+  text-transform: initial;
+}
+
+.blockTable th,
+.blockTable td,
+.searchBlockTable td,
+.searchBlockTable th {
+  border-bottom: 1px solid #fff;
+}
+
+.blockTable th,
+.searchBlockTable th {
+  text-align: left;
+}
+
+.blockTable td,
+.searchBlockTable td {
+  text-align: center;
+}
+
+.transactionTable th,
+td,
+.pendingTransactionTable th,
+td,
+.searchTransactionTable th,
+td,
+.searchAddressTransaction th,
+td {
+  text-align: center;
+}
+
+/* Footer & Copyright Section Styling */
+.footer {
+  background-color: #212122;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer span {
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.footer .fa-cubes {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.footer .fa-bitcoin {
+  color: #f7931a;
+  margin-right: 0.5rem;
+}
+
+.copyright {
+  background-color: #090c14;
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright span {
+  color: white;
+}

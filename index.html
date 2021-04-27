@@ -1,0 +1,323 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.google.com/s2/u/0/favicons?domain=nbabaschet.ro" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Blockchain For Dummies</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="head">
+        <!-- Logo -->
+        <div class="logo-container">
+            <i class="fas fa-cubes"></i> <span class="logo-text">Blockchain</span>
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="#genesis">Genesis Block</a></li>
+                <li><a href="#mine">Mining</a></li>
+                <li><a href="#transaction">Transactions</a></li>
+                <li><a href="#block-explorer">Block Explorer</a></li>
+                <li><a href="#backend">Behind The Scenes</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Spacer -->
+    <div class="spacer"></div>
+    <!-- See First Part of the Window -->
+    <div class="splash">
+        <div class="splash-text">
+            <!-- Splash Heading -->
+            <h1>Welcome To The World Of The Blockchain</h1>
+            <!-- Splash Text -->
+            <span>Experiment and learn how a basic blockchain works, one step at a time. The blockchain you are about to interact with is written in Javascript.</span>
+            <!-- Call to Action Buttons -->
+        </div>
+        <div class="buttons">
+            <button onclick="location.href='#mine'">Get Started With Our Blockchain</button>
+            <button onclick="location.href='#block-explorer'">Check Out Our Block Explorer</button>
+            <button onclick="location.href='#backend'">Go Behind The Scenes</button>
+        </div>
+    </div>
+    <!-- Hero Pattern -->
+    <div class="pattern">
+        <svg viewBox="0 0 500 250" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z" style="stroke: none;fill: #f5f5f5;"></path>
+          </svg>
+    </div>
+    <!-- Sections -->
+    <section class="genesis" id="genesis">
+        <span>Take A Peek At The Genesis Block</span>
+        <div class="genesisBlockTable">
+            <span id="genesisBlockNo"></span>
+            <table class="blockTable" id="blockTable">
+                <tr>
+                    <th>Height</th>
+                    <td id="genesisIndex"></td>
+                </tr>
+                <tr>
+                    <th>Timestamp</th>
+                    <td id="genesisTimestamp"></td>
+                </tr>
+                <tr>
+                    <th># of Transactions</th>
+                    <td id="genesisTransactions"></td>
+                </tr>
+                <tr>
+                    <th>Previous Block Hash</th>
+                    <td id="genesisPreviousBlockHash"></td>
+                </tr>
+                <tr>
+                    <th>Hash</th>
+                    <td id="genesisHash"></td>
+                </tr>
+                <tr>
+                    <th>Nonce</th>
+                    <td id="genesisNonce"></td>
+                </tr>
+                <tr>
+                    <th>Block Reward</th>
+                    <td>50</td>
+                </tr>
+            </table>
+            <span>Block Transactions</span>
+            <span id="genesisTxErrorMessage">Nothing to see here...</span>
+        </div>
+    </section>
+    <section class="mine" id="mine">
+        <span>Mine Your First Block</span>
+        <div>
+            <button id="mineBtn">CLICK HERE</button>
+        </div>
+        <div class="genesisBlockTable">
+            <span id="blockNo"></span>
+            <table class="blockTable" id="blockTable">
+                <tr>
+                    <th>Height</th>
+                    <td id="index"></td>
+                </tr>
+                <tr>
+                    <th>Timestamp</th>
+                    <td id="timestamp"></td>
+                </tr>
+                <tr>
+                    <th># of Transactions</th>
+                    <td id="transactions">0</td>
+                </tr>
+                <tr>
+                    <th>Previous Block Hash</th>
+                    <td id="previousBlockHash"></td>
+                </tr>
+                <tr>
+                    <th>Hash</th>
+                    <td id="hash"></td>
+                </tr>
+                <tr>
+                    <th>Nonce</th>
+                    <td id="nonce"></td>
+                </tr>
+                <tr>
+                    <th>Block Reward</th>
+                    <td>50</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="funds" id="funds">
+        <span id="heading"> Behold! You Now Have Funds. Congratulation.</span>
+        <div class="userInfo">
+            <form>
+                <input type="text" id="userAddress" name="userAddress">
+                <input type="button" id="fundsBtn" name="fundsBtn" value="Reveal">
+            </form>
+            <span id="fundsMessage" hidden></span>
+        </div>
+        <div>
+            <span>All Transactions</span>
+            <span id="txErrorMessage"></span>
+            <div class="transactionTable" id="transactionTable" hidden>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Timestamp</td>
+                            <th>Sender</th>
+                            <th>Recipient</th>
+                            <th>Amount</th>
+                            <th>Block #</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newTransactionTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="transaction" id="transaction">
+        <span>Create Your Very First Transaction.</span>
+        <div>
+            <form>
+                <label for="recipientsAddress">Recipient's Address:</label><br>
+                <input type="text" id="recipientsAddress" name="recipientsAddress" value=""><br>
+                <label for="transactionAmount">Amount You Want To Send:</label><br>
+                <input type="text" id="transactionAmount" name="transactionAmount" value=""><br>
+                <input type="button" id="transactionBtn" value="Create Transaction"><br>
+            </form>
+            <span id="errorMessage"></span>
+            <span id="successMessageTx"></span>
+        </div>
+        <div id="pendingTransactionsContainer" hidden>
+            <span class=>Mempool</span>
+            <div class="pendingTransactionTable" id="pendingTransactionTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Created</td>
+                            <th>Sender</th>
+                            <th>Recipient</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newPendingTransactionTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="confirmation" id="confirmation">
+        <span>Include The Transaction Into The Blockchain</span>
+        <div>
+            <button id="confirmTxBtn">CLICK HERE</button>
+        </div>
+        <div class="blockchain" id="blockchain">
+            <span id=heading>The Blockchain</span>
+            <table>
+                <thead>
+                    <th>Height</th>
+                    <th>Hash</th>
+                    <th>Mined</th>
+                    <th>Miner</th>
+                </thead>
+                <tbody id="blockchainTable"></tbody>
+            </table>
+        </div> 
+    </section>
+    <section class="block-explorer" id="block-explorer">
+        <span>Find What You Are Searching For In The Blockchain.</span>
+        <div>
+            <form>
+                <input type="text" id="searchBlockchain" name="searchBlockchain" value=""><br>
+                <select name="searchOptions" id="searchOptions"><br>
+                    <option value="default">-- Select An Option Below --</option>
+                    <option value="block">Block Hash</option>
+                    <option value="transaction">Transaction ID</option>
+                    <option value="address">Address</option>
+                </select>
+                <input type="button" id="searchBtn" value="Search"><br>
+            </form>
+        </div>
+        <span id="errorMessageBlockExplorer"></span>
+        <div class="searchBlockTable" hidden>
+            <span id="searchBlockNo"></span>
+            <table class="searchBlockTable" id="searchBlockTable">
+                <tr>
+                    <th>Height</th>
+                    <td id="searchBlockIndex"></td>
+                </tr>
+                <tr>
+                    <th>Timestamp</th>
+                    <td id="searchBlockTimestamp"></td>
+                </tr>
+                <tr>
+                    <th># of Transactions</th>
+                    <td id="searchBlockTransactions">0</td>
+                </tr>
+                <tr>
+                    <th>Previous Block Hash</th>
+                    <td id="searchPreviousBlockHash"></td>
+                </tr>
+                <tr>
+                    <th>Hash</th>
+                    <td id="searchBlockHash"></td>
+                </tr>
+                <tr>
+                    <th>Nonce</th>
+                    <td id="searchBlockNonce"></td>
+                </tr>
+                <tr>
+                    <th>Block Reward</th>
+                    <td>50</td>
+                </tr>
+            </table>
+        </div>
+        <div class="searchTransactionTable" id="searchTransactionTable" hidden>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Created</td>
+                        <th>Sender</th>
+                        <th>Recipient</th>
+                        <th>Amount</th>
+                        <th>Block #</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="searchTransactionId"></td>
+                        <td id="searchTransactionDate"></td>
+                        <td id="searchTransactionSender"></td>
+                        <td id="searchTransactionRecipient"></td>
+                        <td id="searchTransactionAmount"></td>
+                        <td id="searchTransactionBlockIndex"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="searchAddressTransaction" id="searchAddressTransaction" hidden>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Timestamp</td>
+                        <th>Sender</th>
+                        <th>Recipient</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="newSearchAddressTransaction"></tbody>
+                <tfoot>
+                    <th>Total Balance</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th id="totalBalance"></th>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+    <section class="backend" id="backend">
+        <span class="backendTitle">Behind The Scenes</span>
+        <a href="https://github.com/" target="_blank">
+            <div class="github">
+                <i class="fab fa-github"></i><span>Check The Project Out On Github</span>
+            </div>
+        </a>
+    </section>
+    <!-- Footer -->
+    <div class="footer">
+        <div><i class="fas fa-cubes"></i><span>Support The Blockchain:</span></div>
+        <div><i class="fab fa-bitcoin"></i><span>Bitcoin: c8f0e7d6a7a962341423ce4c2c05625dcf0d3938dffc71c81bf9ffe27d7384f7</span></div>
+    </div>
+    <div class="copyright">
+        <span>Copyright © 2020 Florian Gheorghe. All Rights Reserved! </span>
+    </div>
+
+
+    <!-- ScriptJS -->
+    <script src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
